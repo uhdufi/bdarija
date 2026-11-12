@@ -1,3 +1,4 @@
+// Bdarija Cloudflare Worker
 {
   "name": "bdarija",
   "main": "worker.mjs",
