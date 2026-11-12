@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ary" dir="rtl">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f7f2"><title>Bdarija — بالدارجة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f2;--side:#efeee6;--ink:#24291f;--muted:#5b6255;--line:#dedfd4;--green:#254638;--lime:#d6f28a;--paper:#fffefa}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.65 Cairo,Arial,sans-serif}button,textarea{font:inherit;color:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}:focus-visible{outline:2px solid #356748;outline-offset:3px}[hidden]{display:none!important}
+.shell{display:grid;grid-template-columns:254px minmax(0,1fr);min-height:100dvh}.side{background:var(--side);border-inline-end:1px solid var(--line);padding:24px 16px;position:sticky;top:0;height:100dvh;display:flex;flex-direction:column;gap:17px}.brand{display:flex;align-items:center;gap:10px;font:800 24px Manrope,Arial,sans-serif}.logo{display:grid;place-items:center;width:39px;height:39px;background:var(--green);color:var(--lime);border-radius:13px;font-size:21px}.side h2{font-size:13px;color:var(--muted);margin:10px 6px 0}.outline,.thread,.icon,.suggest{border:1px solid var(--line);background:var(--paper);border-radius:13px;padding:8px 12px}.outline,.suggest{text-align:start}.outline{font-weight:700}.thread{width:100%;text-align:start;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;background:transparent;border-color:transparent}.thread[aria-current=true],.thread:hover{background:#e1e7d8}.threads{overflow:auto}.side .clear{margin-top:auto}.mobile,.overlay{display:none}
+.panel{min-width:0;display:flex;flex-direction:column;height:100dvh}.top{height:66px;flex:none;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,38px)}.top strong{font:800 18px Manrope,Arial,sans-serif}.badge{font-size:13px;color:var(--green);background:#e8eddf;padding:3px 10px;border-radius:20px}.body{overflow:auto;flex:1;min-height:0}.wrap{width:min(100% - 32px,760px);margin-inline:auto}.welcome{padding:clamp(28px,9vh,92px) 0 30px}.hero{background:var(--green);color:#fff;border-radius:24px;padding:clamp(20px,5vw,42px);position:relative;overflow:hidden}.hero:after{content:'✦';position:absolute;left:12px;bottom:-84px;font:240px/1 Manrope,sans-serif;color:#fff1;pointer-events:none}.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.2;margin:0;color:var(--lime)}.hero p{margin:10px 0 0;position:relative;z-index:1}.ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}.suggest{min-width:0;font-weight:700}.suggest span{display:block;color:var(--green);font-size:13px}.suggest:hover,.outline:hover{border-color:var(--green)}.chat{padding-block:21px}.message{padding:12px 15px;margin-bottom:14px;border:1px solid var(--line);border-radius:15px;background:var(--paper);max-width:92%;width:fit-content;overflow-wrap:anywhere}.message.user{margin-inline-start:auto;background:#e6ecdf}.message b{display:block;font-size:12px;color:var(--green);margin-bottom:3px}.message div{white-space:pre-wrap}.copy{background:transparent;border:0;color:var(--green);font-size:12px;padding:4px 0}
+.dock{flex:none;padding:8px 0 max(10px,env(safe-area-inset-bottom));background:var(--bg)}form{display:flex;align-items:end;gap:7px;background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:8px;box-shadow:0 8px 28px #2a3d2810}textarea{display:block;flex:1;min-width:0;padding:8px;border:0;background:transparent;resize:none;max-height:110px}textarea::placeholder{color:var(--muted)}.icon,.send{height:43px;min-width:43px;padding:0 10px;display:grid;place-items:center}.icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}.send{border:0;border-radius:12px;background:var(--green);color:white;font-weight:800}.recording{background:#f7ded6;color:#8d2e25}.note,.feedback{font-size:12px;margin:5px 0 0;color:var(--muted)}.note{text-align:center}.feedback{min-height:20px;color:#7e3428}.dots{display:flex;gap:5px;align-items:center;height:22px}.dots i{width:6px;height:6px;background:var(--green);border-radius:50%;animation:jump .95s infinite}.dots i:nth-child(2){animation-delay:.13s}.dots i:nth-child(3){animation-delay:.26s}@keyframes jump{35%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.dots i{animation:none}}@media(max-width:760px){.shell{display:block}.side{position:fixed;inset:0 0 0 auto;width:min(280px,85vw);z-index:3;display:none}.side.open{display:flex}.mobile{display:grid}.overlay.open{display:block;position:fixed;inset:0;z-index:2;border:0;background:#202d2755}.top{height:56px}.ideas{grid-template-columns:1fr}.welcome{padding-top:20px}.suggest span{display:inline;margin-inline-end:8px}}
+</style>
+<body><div class="shell">
+<aside class="side" id="side" aria-label="المحادثات"><div class="brand" dir="ltr"><span class="logo" aria-hidden="true">✦</span>Bdarija</div><button class="outline" id="new">＋ محادثة جديدة</button><h2>المحادثات</h2><div class="threads" id="threads"></div><button class="outline clear" id="clear" hidden>مسح هاد المحادثة</button></aside>
+<button class="overlay" id="overlay" aria-label="سدّ القائمة" tabindex="-1"></button>
+<div class="panel">
+<header class="top"><button class="icon mobile" id="menu" aria-label="المحادثات" aria-controls="side" aria-expanded="false">☰</button><strong dir="ltr">Bdarija</strong><span class="badge">بالدارجة المغربية</span></header>
+<main class="body" id="scroll"><div class="wrap">
+<section class="welcome" id="welcome"><div class="hero"><h1>هضر بالدارجة.</h1><p>كتب سؤالك ولا قولُه بالميكروفون. فاش نعاونك اليوم؟</p></div>
+<div class="ideas"><button class="suggest" data-prompt="عاونّي نكتب مساج شكر قصير بالدارجة."><span>كتابة</span> نكتب مساج</button><button class="suggest" data-prompt="شرح ليا الذكاء الاصطناعي بمثال من الحياة اليومية."><span>تعلّم</span> نفهم فكرة</button><button class="suggest" data-prompt="عطيني أفكار لفطور مغربي سريع."><span>أفكار</span> نوجد الفطور</button></div></section>
+<div class="chat" id="log" role="log" aria-label="المحادثة" hidden></div>
+</div></main>
+<footer class="dock"><div class="wrap"><p class="feedback" id="feedback" role="status"></p><form>
+<textarea id="prompt" rows="1" maxlength="2500" placeholder="كتب ولا سجّل سؤالك…" aria-label="السؤال"></textarea>
+<button type="button" class="icon" id="mic" aria-label="بدا التسجيل" title="سجّل صوتك"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8"/></svg></button>
+<button type="submit" class="send" id="send">صيفط ↑</button></form><p class="note">المحادثات كتبقى فهاد المتصفح. الصوت كيتصيفط لـGemini باش يتحوّل لنص.</p></div></footer>
+</div></div>
+<script>
+const $ = id => document.getElementById(id);
+const input = $('prompt'), form = document.querySelector('form'), log = $('log'), scroll = $('scroll'), mic = $('mic'), send = $('send');
+const key = 'bdarija-chats-v1';
+let chats = [];
+try { const saved = JSON.parse(localStorage.getItem(key)); if (Array.isArray(saved)) chats = saved; } catch {}
+let current = null, pending = null, recording = null, transcribing = null;
+function save() {
+  try { localStorage.setItem(key, JSON.stringify(chats.slice(0, 24))); } catch {}
+}
+function closeMenu() {
+  $('side').classList.remove('open'); $('overlay').classList.remove('open'); $('menu').setAttribute('aria-expanded','false');
+}
+function busy() { send.disabled = !!(pending || recording || transcribing); mic.disabled = !!(pending || transcribing); }
+function bottom() { scroll.scrollTop = scroll.scrollHeight; }
+function message(item) {
+  const box = document.createElement('article'); box.className = 'message ' + item.role;
+  const title = document.createElement('b'); title.textContent = item.role === 'user' ? 'نتا' : 'Bdarija';
+  const body = document.createElement('div'); body.dir = 'auto'; body.textContent = item.text;
+  box.append(title,body); log.append(box); return body;
+}
+function copy(body) {
+  const button = document.createElement('button'); button.type='button'; button.className='copy'; button.textContent='نسخ';
+  button.onclick=async()=>{try{await navigator.clipboard.writeText(body.textContent);button.textContent='تنسخ'}catch{$('feedback').textContent='ما قدرناش ننسخو الجواب.'}};
+  body.after(button);
+}
+function threads() {
+  $('threads').replaceChildren();
+  for (const chat of chats) {
+    const button = document.createElement('button'); button.type='button'; button.className='thread';
+    button.textContent = chat.messages[0]?.text || 'محادثة جديدة'; button.setAttribute('aria-current',String(chat===current));
+    button.onclick = () => switchChat(chat); $('threads').append(button);
+  }
+  $('clear').hidden = !current;
+}
+function switchChat(chat) {
+  pending?.abort(); pending=null; transcribing?.abort(); transcribing=null;
+  if(recording){recording.discard=true;recording.stop();}
+  current=chat; input.value=''; $('feedback').textContent=''; log.replaceChildren(); log.removeAttribute('aria-busy');
+  $('welcome').hidden=!!chat; log.hidden=!chat;
+  for (const item of chat?.messages ?? []) {const body=message(item);if(item.role==='model') copy(body);}
+  threads(); closeMenu(); busy(); bottom();
+}
+async function api(path, payload, signal) {
+  const r = await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal});
+  if (!r.headers.get('content-type')?.includes('application/json')) {
+    throw new Error('حلّ الموقع من رابط Cloudflare باش يخدم الشات.');
+  }
+  const d = await r.json();
+  if(!r.ok) throw new Error(d.error || 'وقع مشكل. عاود جرّب.');
+  return d;
+}
+function reveal(body, text, signal) {
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) {body.textContent=text;bottom();return Promise.resolve();}
+  const chars = Array.from(text); const duration = Math.min(3200, chars.length*15);
+  return new Promise(resolve=>{
+    let frame, start;
+    const done=()=>{cancelAnimationFrame(frame);signal.removeEventListener('abort',done);resolve()};
+    const draw=now=>{
+      start??=now;const n=Math.min(chars.length,1+Math.floor((now-start)*chars.length/duration));
+      const follow=scroll.scrollHeight-scroll.scrollTop-scroll.clientHeight<90;
+      body.textContent=chars.slice(0,n).join('');if(follow) bottom();
+      if(n===chars.length) done();else frame=requestAnimationFrame(draw);
+    };
+    signal.addEventListener('abort',done,{once:true});frame=requestAnimationFrame(draw);
+  });
+}
+form.onsubmit=async event=>{
+  event.preventDefault();
+  const text=input.value.trim();if(!text||pending||recording||transcribing)return;
+  if(!current){current={messages:[]};chats=[current,...chats].slice(0,24);}
+  const chat=current, ctl=new AbortController();pending=ctl;busy();
+  $('feedback').textContent='';$('welcome').hidden=true;log.hidden=false;input.value='';
+  message({role:'user',text});const body=message({role:'model',text:''});
+  body.innerHTML='<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>';log.setAttribute('aria-busy','true');
+  $('feedback').textContent='كنوجد الجواب…';bottom();
+  try {
+    const result=await api('/api/chat',{messages:[...chat.messages.slice(-10),{role:'user',text}]},ctl.signal);
+    if(pending!==ctl)return;
+    chat.messages.push({role:'user',text},{role:'model',text:result.reply});save();threads();
+    $('feedback').textContent='';body.replaceChildren();await reveal(body,result.reply,ctl.signal);
+    if(pending===ctl) copy(body);
+  } catch(error) {
+    if(pending!==ctl)return;
+    body.parentElement.previousElementSibling?.remove();body.parentElement.remove();input.value=text;
+    if(!chat.messages.length){chats=chats.filter(x=>x!==chat);current=null;log.hidden=true;$('welcome').hidden=false;threads();}
+    $('feedback').textContent=error.message;
+  } finally {if(pending===ctl){pending=null;log.removeAttribute('aria-busy');busy();}}
+};
+$('new').onclick=()=>switchChat(null);
+$('clear').onclick=()=>{if(confirm('تمسح هاد المحادثة؟')){chats=chats.filter(x=>x!==current);save();switchChat(null);}};
+$('menu').onclick=()=>{$('side').classList.add('open');$('overlay').classList.add('open');$('menu').setAttribute('aria-expanded','true')};
+$('overlay').onclick=closeMenu;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>{input.value=b.dataset.prompt;form.requestSubmit()});
+input.onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();form.requestSubmit()}};
+mic.onclick=async()=>{
+  if(recording){recording.stop();return;}
+  if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){$('feedback').textContent='التسجيل ما خدامش فهاد المتصفح.';return;}
+  mic.disabled=true;
+  let stream;
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    if(pending||transcribing){stream.getTracks().forEach(t=>t.stop());busy();return;}
+    const recorder=new MediaRecorder(stream), chunks=[];
+    const session={discard:false,stop(){if(recorder.state!=='inactive')recorder.stop()}};
+    recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+    recorder.onerror=()=>{session.discard=true;session.stop();$('feedback').textContent='وقع مشكل فالتسجيل.'};
+    recorder.onstop=async()=>{
+      clearTimeout(timer);stream.getTracks().forEach(t=>t.stop());recording=null;
+      mic.classList.remove('recording');mic.setAttribute('aria-label','بدا التسجيل');mic.setAttribute('aria-pressed','false');
+      if(session.discard){busy();return;}
+      const ctl=new AbortController();transcribing=ctl;busy();$('feedback').textContent='كنحوّل التسجيل لنص…';
+      try {
+        const blob=new Blob(chunks,{type:recorder.mimeType});if(!blob.size||blob.size>1800000)throw new Error('التسجيل خاوي ولا طويل بزاف.');
+        const audio=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.onerror=reject;reader.readAsDataURL(blob)});
+        const {transcript}=await api('/api/transcribe',{audio,mimeType:blob.type.split(';')[0]},ctl.signal);
+        if(transcribing!==ctl)return;
+        input.value=[input.value.trim(),transcript].filter(Boolean).join(' ').slice(0,2500);input.focus();
+        $('feedback').textContent='راجع النص وصيفطو ملي تكون واجد.';
+      } catch(e){if(transcribing===ctl)$('feedback').textContent=e.message||'ما قدرناش نحوّلو التسجيل.'}
+      finally{if(transcribing===ctl){transcribing=null;busy()}}
+    };
+    recorder.start();recording=session;const timer=setTimeout(()=>session.stop(),45000);
+    mic.classList.add('recording');mic.setAttribute('aria-label','وقف التسجيل');mic.setAttribute('aria-pressed','true');
+    $('feedback').textContent='كنسجّلو… ضغط على الميكروفون باش توقف، حتى لـ45 ثانية.';busy();
+  }catch{stream?.getTracks().forEach(t=>t.stop());$('feedback').textContent='ما قدرناش نفتحو الميكروفون. شوف واش عطيت الإذن.';busy();}
+};
+threads();
+</script>
+</body></html>
