@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ary" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f4ed"><meta name="description" content="Bdarija، مساحة لأفكارك بالدارجة المغربية. كتب، تعلّم، وخطّط في تجربة مستلهمة من الحرفة المغربية.">
+<title>Bdarija — بالدارجة، بكل بساطة</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8 8H4l1.6-4A8 8 0 1 1 20 11.5Z"/><path d="M8 10h8M8 14h5"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="m10 3-.7 2.3-2 .9L5 5.7 3 9l1.7 1.7v2.6L3 15l2 3.3 2.3-.5 2 .9.7 2.3h4l.7-2.3 2-.9 2.3.5 2-3.3-1.7-1.7v-2.6L21 9l-2-3.3-2.3.5-2-.9L14 3Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3m-3 0h6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1 11-11a2 2 0 0 0-5-5L4 15Z"/></symbol>
+<symbol id="i-light" viewBox="0 0 24 24"><path d="M9 17v-1a6 6 0 1 1 6 0v1M9 18h6m-5 3h4M12 1V0M3 5l-1-1m20 0-1 1M1 12h2m18 0h2"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M15 5V4H4v11h1"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4Z"/><path d="m12 8 4 4-4 4-4-4Z"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#prompt">دوز لمساحة الكتابة</a>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="التنقل والمحادثات">
+<a href="/" class="brand" aria-label="Bdarija، الصفحة الرئيسية"><span class="brand-mark"><svg><use href="#i-star"/></svg></span><span dir="ltr">Bdarija<span class="brand-dot">.</span></span></a>
+<div class="brand-caption">كلامنا. أفكارنا. آفاق جديدة.</div>
+<button class="new-chat" id="new-chat"><svg><use href="#i-plus"/></svg>محادثة جديدة<span class="key-hint">＋</span></button>
+<nav class="side-nav" aria-label="الأدوات"><button id="open-search"><svg><use href="#i-search"/></svg>قلّب فالمحادثات</button><button id="open-library"><svg><use href="#i-grid"/></svg>مكتبة الأفكار<span class="small-dot"></span></button></nav>
+<div class="history-head"><span>محادثاتك</span><span id="chat-count">00</span></div>
+<div class="history" id="history"></div>
+<div class="history-empty" id="history-empty"><svg><use href="#i-chat"/></svg><p>كل فكرة زوينة<br>كتبدا بمحادثة.</p></div>
+<div class="sidebar-bottom"><div class="sidebar-art" aria-hidden="true"></div><button class="settings-link" id="open-settings"><svg><use href="#i-settings"/></svg>الإعدادات وحول Bdarija<svg class="settings-chevron"><use href="#i-chev"/></svg></button><div class="sidebar-signature"><span class="signature-mark">✦</span> بروح مغربية <span class="signature-line"></span><span dir="ltr">بكل بساطة</span></div></div>
+</aside>
+<button id="overlay" class="overlay" aria-label="سدّ القائمة" tabindex="-1" hidden></button>
+<div class="workspace">
+<header class="topbar"><div class="topbar-start"><button id="menu" class="icon-button mobile-menu" aria-label="فتح القائمة" aria-controls="sidebar" aria-expanded="false"><svg><use href="#i-menu"/></svg></button><span class="breadcrumb">مساحة أفكارك</span><span class="breadcrumb-sep">/</span><span class="topbar-name" dir="ltr">Bdarija</span></div><div class="topbar-end"><span class="language-label"><span class="status-dot"></span> بالدارجة المغربية</span><button class="avatar" id="about-button" aria-label="حول Bdarija">ب</button></div></header>
+<main id="main-scroll" class="main-scroll">
+<section class="welcome" id="welcome" aria-labelledby="welcome-title">
+<div class="welcome-intro"><div class="intro-copy"><div class="eyebrow"><span></span>من هنا، كتبدا الفكرة</div><h1 id="welcome-title"><span>هضر بالدارجة.</span></h1><p class="hero-description">شي فكرة فبالك؟ شي حاجة بغيتي تفهمها؟<br>خود راحتك، وعبّر عليها بكلامك.</p></div><div class="zellige-art" aria-hidden="true"><img src="/assets/rosette.svg" alt="" width="280" height="280"><span class="art-caption">أصالة فالتفاصيل. آفاق فالأفكار.</span></div></div>
+<div id="welcome-composer"></div>
+<div class="ideas-head"><span>شوية إلهام باش تبدا</span><button id="all-ideas">شوف المكتبة<svg><use href="#i-chev"/></svg></button></div>
+<div class="suggestions"><button class="suggestion" data-prompt="عاونّي نكتب إيميل مهني قصير باش نقدّم راسي لشركة، وخلي بلايص نعمر فيها المعلومات ديالي."><span class="suggestion-icon"><svg><use href="#i-pen"/></svg></span><span class="suggestion-label">نلقى الكلمات المناسبة</span><span class="suggestion-description">إيميل، نص، ولا فكرة بلمستك</span><svg class="suggestion-arrow"><use href="#i-chev"/></svg></button><button class="suggestion" data-prompt="شرح ليا كيفاش كيخدم الذكاء الاصطناعي بمثال بسيط من الحياة اليومية، وبالدارجة."><span class="suggestion-icon"><svg><use href="#i-book"/></svg></span><span class="suggestion-label">نفهمها ببساطة</span><span class="suggestion-description">مفهوم جديد، شرح قريب ليك</span><svg class="suggestion-arrow"><use href="#i-chev"/></svg></button><button class="suggestion" data-prompt="عندي فكرة مشروع صغير فالمنتوجات المغربية. عاونّي نرتّبها: شنو الأسئلة اللي خاصني نجاوب عليها قبل ما نبدا؟"><span class="suggestion-icon"><svg><use href="#i-light"/></svg></span><span class="suggestion-label">نعطي لفكرتي طريق</span><span class="suggestion-description">من أول خاطر لأول خطوة</span><svg class="suggestion-arrow"><use href="#i-chev"/></svg></button></div>
+<div class="welcome-signature"><span></span><svg><use href="#i-star"/></svg><span></span><p>بالدارجة، الأفكار كتاخد راحتها.</p></div>
+</section>
+<section id="chat-view" class="chat-view" aria-label="المحادثة" hidden><div class="conversation-toolbar"><div><span class="eyebrow small">محادثتك</span><h1 id="conversation-title">محادثة جديدة</h1></div><div class="conversation-actions"><button class="icon-button" id="export-chat" aria-label="تحميل المحادثة" title="تحميل المحادثة"><svg><use href="#i-download"/></svg></button><button class="icon-button" id="delete-chat" aria-label="مسح المحادثة" title="مسح المحادثة"><svg><use href="#i-trash"/></svg></button></div></div><div class="messages" id="messages" role="log" aria-label="الرسائل" aria-live="polite"></div></section>
+</main>
+<div id="chat-composer" class="chat-composer" hidden></div>
+<div class="dock" id="dock"><form id="composer" class="composer"><label class="sr-only" for="prompt">السؤال ديالك</label><textarea id="prompt" rows="2" maxlength="6000" dir="auto" placeholder="شنو فبالك اليوم؟"></textarea><div class="composer-toolbar"><div class="composer-tools"><button type="button" class="mic-button" id="mic" aria-label="بدا التسجيل الصوتي" aria-pressed="false"><svg><use href="#i-mic"/></svg><span id="mic-label">قولها بصوتك</span></button><span class="toolbar-divider"></span><span class="composer-context">على خاطرك، وبكلامك</span></div><button class="send-button" id="send" type="submit" aria-label="صيفط السؤال" disabled><svg><use href="#i-arrow"/></svg></button><button class="send-button stop-button" id="stop" type="button" aria-label="وقف الجواب" hidden><span></span></button></div></form><div class="composer-meta"><span><svg><use href="#i-info"/></svg>راجع المعلومات المهمة. الذكاء الاصطناعي يقدر يغلط.</span><span class="enter-hint"><kbd>Enter</kbd> للإرسال</span></div><p id="feedback" class="feedback" role="status" hidden></p></div>
+</div></div>
+<dialog id="library-dialog" class="dialog library-dialog" aria-labelledby="library-title"><div class="dialog-head"><div><span class="eyebrow small">إلهام على قدّك</span><h2 id="library-title">كل فكرة عندها بداية.</h2></div><button class="icon-button" data-close aria-label="سدّ المكتبة"><svg><use href="#i-close"/></svg></button></div><p class="dialog-description">اختار البداية اللي قريبة ليك، وزيد عليها لمستك.</p><div class="library-filters" id="library-filters"><button data-filter="all" aria-pressed="true">الكل</button><button data-filter="write" aria-pressed="false">كتابة</button><button data-filter="learn" aria-pressed="false">تعلّم</button><button data-filter="plan" aria-pressed="false">تخطيط</button></div><div id="library-list" class="library-list"></div></dialog>
+<dialog id="search-dialog" class="dialog search-dialog" aria-labelledby="search-title"><div class="dialog-head"><h2 id="search-title">قلّب على فكرة سابقة</h2><button class="icon-button" data-close aria-label="سدّ البحث"><svg><use href="#i-close"/></svg></button></div><div class="search-field"><svg><use href="#i-search"/></svg><input id="search-input" type="search" placeholder="شي كلمة من المحادثة…" aria-label="البحث فالمحادثات"></div><div id="search-results" class="search-results"></div></dialog>
+<dialog id="settings-dialog" class="dialog settings-dialog" aria-labelledby="settings-title"><div class="dialog-head"><h2 id="settings-title">على خاطرك.</h2><button class="icon-button" data-close aria-label="سدّ الإعدادات"><svg><use href="#i-close"/></svg></button></div><section class="setting-section"><h3>القراءة</h3><label class="setting-row" for="large-type"><span>خط أكبر للمحادثة</span><input id="large-type" type="checkbox" role="switch"></label></section><section class="setting-section"><h3>الخصوصية</h3><p>المحادثات كتتحفظ فهاد المتصفح. ملي كتصيفط سؤال، كيمشي لخدمة Gemini باش تجاوبك. التسجيل الصوتي كيتصيفط غير ملي كتوقف التسجيل باش يتحوّل لنص.</p><button id="clear-all" class="text-button danger">مسح جميع المحادثات</button></section><section class="setting-section"><h3>حول Bdarija</h3><p>مساحة للأفكار بالدارجة المغربية، بهوية مستلهمة من الدقة والصبر ديال حرفة الزليج.</p><div class="connection-state" id="connection-state">كنتحقّقو من اتصال المساعد…</div></section></dialog>
+<dialog id="confirm-dialog" class="dialog confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title">تمسح هاد المحادثة؟</h2><p id="confirm-description">هاد العملية ما يمكنش ترجعها.</p><div class="confirm-actions"><button id="confirm-cancel" class="secondary-button">خليها</button><button id="confirm-yes" class="primary-button">مسح</button></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+</body></html>
