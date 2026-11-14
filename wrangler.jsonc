@@ -1,7 +1,0 @@
-{
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "bdarija",
-  "main": "dist/server/index.js",
-  "compatibility_date": "2026-11-14",
-  "keep_vars": true
-}
