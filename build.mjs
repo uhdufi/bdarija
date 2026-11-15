@@ -48,3 +48,4 @@ await mkdir(destination, { recursive: true });
 await writeFile(join(destination, 'index.js'), template.replace(marker, () => JSON.stringify(assets)));
 const total = Object.values(assets).reduce((sum, asset) => sum + Math.floor(asset.data.length * 3 / 4), 0);
 console.log(`Built ${Object.keys(assets).length} assets (${total.toLocaleString('en-US')} bytes) into ${resolve(destination, 'index.js')}`);
+ 
