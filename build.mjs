@@ -27,7 +27,19 @@ async function collect(path) {
     assets[key] = { type: types[extname(entry.name).toLowerCase()] || 'application/octet-stream', data: data.toString('base64'), hash: createHash('sha256').update(data).digest('hex').slice(0, 20) };
   }
 }
-for (const required of ['index.html', 'style.css', 'app.js']) await readFile(join(source, required));
+const referencedAssets = new Set();
+for (const required of ['index.html', 'style.css', 'app.js']) {
+  const text = await readFile(join(source, required), 'utf8');
+  for (const match of text.matchAll(/\/assets\/[A-Za-z0-9_.-]+/g)) referencedAssets.add(match[0]);
+}
+for (const assetPath of referencedAssets) {
+  try {
+    const data = await readFile(join(source, assetPath.slice(1)));
+    if (!data.length) throw new Error('empty file');
+  } catch {
+    throw new Error(`Required website asset is missing or empty: src${assetPath}. Upload the complete src/assets directory before deploying.`);
+  }
+}
 await collect(source);
 const template = await readFile(join(source, 'server.mjs'), 'utf8');
 const marker = '/* BUILD_ASSETS */ {}';
